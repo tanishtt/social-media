@@ -1,0 +1,15 @@
+{
+  "name": "codemain",
+  "version": "1.0.0",
+  "description": "my all social media application",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tanish mohanta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}

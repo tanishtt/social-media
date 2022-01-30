@@ -1,4 +1,5 @@
 const express=require("express");
+const router = require("./routes/index");
 const app=express();
 const port=8000;
 
@@ -13,7 +14,7 @@ app.listen(port,function(err)
         console.log(`error in running the server : ${err}`);
     }
 
-    console.log(`server is running on port number ;${port}`);
+    console.log(`server is running on port number : ${port}`);
 });
 
 

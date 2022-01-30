@@ -8,7 +8,7 @@ router.get("/profile",usercontroller.profile);
 
 
 //localhost:8000/users/profile/likes
-//then router.use("/likes",reyuire(...));
+//then router.use("/likes",require(...));
  
 
 module.exports=router;

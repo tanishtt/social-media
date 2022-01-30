@@ -8,7 +8,7 @@ app.use("/",require("./routes/index"));
 
 //tell app that our view engine will be ejs...
 app.set('view engine','ejs');
-
+app.set('views','./views');
 
 app.listen(port,function(err)
 {

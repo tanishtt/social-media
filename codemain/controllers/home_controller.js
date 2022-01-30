@@ -1,6 +1,11 @@
 module.exports.home=function(req,res)
 {
-    return res.end("<h1>express</h1>");
+    return res.render('homee',
+    {
+        title:"social media"
+    });
+
+    //return res.end("<h1>express</h1>");
 };
 
 

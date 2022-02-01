@@ -2,6 +2,12 @@ const express=require("express");
 const router = require("./routes/index");
 const app=express();
 const port=8000;
+const expresslayouts=require('express-ejs-layouts');
+
+app.use(express.static('./assests'));
+
+
+app.use(expresslayouts);
 
 //use express ROUTERS...
 app.use("/",require("./routes/index"));

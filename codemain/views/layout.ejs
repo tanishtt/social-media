@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <!--href="../assests/css/layout.css" you donot need to write this as you have already mentioned static files(assests)-->
+    <link rel="stylesheet" href="css/layout.css" >
+</head>
+<body>
+    <%- include('_header');%>
+
+
+    <!--variable part...
+    body is predefined...-->
+    <%- body %>
+
+
+
+    <%- include('_footer');%>
+
+</body>
+</html>

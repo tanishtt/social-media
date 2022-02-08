@@ -5,7 +5,7 @@ const port=8000;
 
 
 const db=require('./config/mongoose');
-const Contact=require('./models/contact');
+const Contact=require('./models/user');
 
 
 

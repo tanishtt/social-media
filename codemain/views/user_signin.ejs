@@ -1,8 +1,9 @@
 
-    <h1>sign in...</h1>
-    <form action="/users/create-session" method="post">
+    <h1>sign up/in...</h1>
+    <form action="/users/create" method="post">
         <input type="email" name="email" required placeholder="email...">
         <input type="password" name="password" required placeholder="password...">
+        <input type="password" name="c_password" required placeholder="c_password...">
         <input type="text" name="name" required placeholder="name...">
-        <input type="submit">
+        <input type="submit" value="sign-up">
     </form>

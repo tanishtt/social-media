@@ -11,4 +11,9 @@ router.get("/profile",usercontroller.profile);
 //then router.use("/likes",require(...));
  
 
+router.get("/login",usercontroller.login);
+
+router.get("/signin",usercontroller.signin);
+
+
 module.exports=router;

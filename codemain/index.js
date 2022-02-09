@@ -1,4 +1,6 @@
 const express=require("express");
+const cookieparser=require("cookie-parser");
+
 const router = require("./routes/index");
 const app=express();
 const port=8000;
@@ -6,10 +8,13 @@ const port=8000;
 
 const db=require('./config/mongoose');
 const Contact=require('./models/user');
+app.use(express.urlencoded());
 
+app.use(cookieparser());
 
 
 const expresslayouts=require('express-ejs-layouts');
+
 
 app.use(express.static('./assests'));
 

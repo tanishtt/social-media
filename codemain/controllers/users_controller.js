@@ -2,14 +2,37 @@ const User=require('../models/user');
 
 //***WE ARE ACCESSING THE SCHEMA***
 
+
+
 module.exports.profile=function(req,res)
 {
-    res.render('user_profile',
+
+    if(req.cookies.user_id)
+    {
+        User.findById(req.cookies.user_id,function(err,user)
+        {
+            if(user)
+            {
+                return res.render('user_profile',{
+                    title:"user profile",
+                    user:user
+                });
+            }
+        });
+    }
+    else
+    {
+        return res.redirect('/users/login');
+    }
+    /*res.render('user_profile',
     {
        title:"hiiii..." 
-    });
+    });*/
     //res.end("<h1>profile....</h1>");
 };
+
+
+
 
 module.exports.login=function(req,res)
 {
@@ -17,6 +40,9 @@ module.exports.login=function(req,res)
         title:"code|login"
     });
 }
+
+
+
 
 module.exports.signin=function(req,res)
 {
@@ -102,7 +128,7 @@ module.exports.createsession=function(req,res)
 
                 //handle session creation
                 res.cookie('user_id',user.id);
-                return res.redirect('users/profile');
+                return res.redirect('/users/profile');
             }
             else
             {

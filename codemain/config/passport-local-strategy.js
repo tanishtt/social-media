@@ -32,7 +32,7 @@ passport.use(new LocalStrategy({
 
             return done(null,user);
             //null means no error
-            //sending user as authentication is passed
+            //sending user as authentication is true(passed).
         })
     }
 ));
@@ -42,7 +42,7 @@ passport.use(new LocalStrategy({
 
 //serializing the user to decide which key is to be kept in the cookies
 passport.serializeUser(function(user,done){
-    //it automaticaally serialize it... 
+    //it automatically serialize it... 
     done(null,user.id);
 });
 
@@ -50,10 +50,12 @@ passport.serializeUser(function(user,done){
 
 //deserializing the user from the key in the cookies
 passport.deserializeUser(function(id,done){
+    //it automatically deserialize it and convert into id...
+
     User.findById(id,function(err,user){
         if(err)
         {
-            console.log('error in dinding user-->passport');
+            console.log('error in finding user-->passport');
             return done(err);
         }
 
@@ -61,3 +63,8 @@ passport.deserializeUser(function(id,done){
         return done(null,user);
     });
 });
+
+
+
+
+module.exports=passport;

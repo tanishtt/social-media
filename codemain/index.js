@@ -33,18 +33,30 @@ app.use(express.static('./assests'));
 
 app.use(expresslayouts);
 
+
+
 app.use(session({
     //{name:value}//object//{key:value}
     name:'codemain_userid',
     secret:'encryption_key',
     //it is key used to encrypt(you can write anything).
-    saveUninitialized:false,
-    resave:false,
+
+    saveUninitialized:false,//if login data is not there, then we donot need to store the data. so false 
+    resave:false,//if user information is not changed,then i should not resave it again and again.
+
+
     //if you logged in for for than specified time then cookie experies..session-cookie expires
     cookie:{
-        maxAge:(1000*60*60),//time for which cookie session is there
+        maxAge:(1000*60*100),//time for which cookie session is there
     }
 }));
+
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(passport.setauthenticateduser);
 
 //use express ROUTERS...
 app.use("/",require("./routes/index"));

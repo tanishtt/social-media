@@ -57,7 +57,7 @@ module.exports.create=function(req,res)
          {
             if(err)
             {
-                console.log('error in creating user in signing up');
+                console.log('error in creating user in signing up',err);
                 return;
             }
             //after creating user . redirect it to login page...
@@ -81,6 +81,6 @@ module.exports.create=function(req,res)
 
 module.exports.createsession=function(req,res)
 {
-    
+        return res.redirect('/users/profile');
 }
 
